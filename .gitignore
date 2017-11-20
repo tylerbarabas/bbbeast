@@ -3,5 +3,6 @@ dist/
 node_modules/
 .idea/
 *.iml
+*.swp
 npm-debug.log
 package-lock.json
