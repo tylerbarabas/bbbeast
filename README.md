@@ -1,6 +1,6 @@
 # bbbeast
 
-Forked from https://github.com/jluccisano/webpack-es6-boilerplate.git`
+Forked from https://github.com/jluccisano/webpack-es6-boilerplate.git
 
 ## Start Dev Server
 
