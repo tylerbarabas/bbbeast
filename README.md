@@ -4,7 +4,7 @@ Forked from https://github.com/jluccisano/webpack-es6-boilerplate.git`
 
 ## Start Dev Server
 
-1. Run  git clone`git@github.com:tylerbarabas/bbbeast.git
+1. git clone
 2. Run `npm install`
 3. Start the dev server using `npm start`
 3. Open [http://localhost:3000](http://localhost:3000)
