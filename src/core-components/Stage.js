@@ -33,7 +33,6 @@ export default class Stage {
 
     init(){
         document.body.appendChild(this.dom);
-        this.dom.appendChild( document.createElement('DIV') );
 
         setTimeout(function(){
             this.resize();
