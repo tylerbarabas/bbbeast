@@ -22,7 +22,7 @@ export default class Stage {
             height: 100%;
             width: 100%;
             background-color: #000000;
-            opacity: 0.9;
+            opacity: 0;
             position: absolute;
             top: 0;
             left: 0;
