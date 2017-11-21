@@ -1,16 +1,45 @@
+import bg from 'img/bg.jpg';
+
 export default class Stage {
 
     constructor(){
         this.dom = document.createElement('DIV');
         this.dom.id = 'content-stage';
-        this.dom.style.backgroundColor = '#000';
-        this.pageScale = 1;
+        this.dom.setAttribute('style',`
+            position: absolute;
+            width: 1200px;
+            background: url(${bg});
+            background-size: 100% 100%;
+            background-repeat: no-repeat; 
+            height: 650px;
+            overflow: hidden;
+            visibility: hidden;
+        `);
 
-        this.dom.setAttribute('style', 'height: 100px; background-color: #000');
+        this.overlay = document.createElement('DIV');
+        this.overlay.setAttribute('style', `
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            opacity: 0.9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        `);
+
+        this.pageScale = 1;
     }
 
     init(){
         document.body.appendChild(this.dom);
+        this.dom.appendChild( document.createElement('DIV') );
+
+        setTimeout(function(){
+            this.resize();
+            this.dom.style.visibility = 'visible';
+            window.addEventListener('resize',this.resize.bind(this));
+        }.bind(this),25);
     }
 
     resize(){

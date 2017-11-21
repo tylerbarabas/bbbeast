@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const extractSass = new ExtractTextPlugin({
     filename: "[name].[contenthash].css"
@@ -62,6 +63,13 @@ module.exports = {
             // use style-loader in development
             fallback: "style-loader"
         })
+    },{
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+    },
+    { 
+        test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, 
+        loader: "file-loader" 
     }]
   },
   plugins: [
@@ -72,6 +80,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
-      extractSass
+    extractSass,
+    new ImageminPlugin({
+      disable: process.env.NODE_ENV !== 'production', // Disable during development
+    })
   ]
 };
