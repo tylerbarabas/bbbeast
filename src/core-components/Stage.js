@@ -17,6 +17,7 @@ export default class Stage {
         `);
 
         this.overlay = document.createElement('DIV');
+        this.overlay.id = 'overlay';
         this.overlay.setAttribute('style', `
             height: 100%;
             width: 100%;
@@ -33,6 +34,7 @@ export default class Stage {
 
     init(){
         document.body.appendChild(this.dom);
+        this.dom.appendChild(this.overlay);
 
         setTimeout(function(){
             this.resize();
