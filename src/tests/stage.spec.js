@@ -8,5 +8,5 @@ test('Content stage should instantiate', () => {
 });
 
 test('Content Stage should be appended to body', () => {
-   expect(ContentStage).toHaveProperty('dom'); 
+	expect(ContentStage).toHaveProperty('dom'); 
 });
