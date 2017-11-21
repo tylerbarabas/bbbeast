@@ -47,7 +47,7 @@ export default class Stage {
         let scale_w = window.innerWidth / div_w;
         let scale_h = window.innerHeight / div_h;
 
-        this.pageScale = Math.min(scale_w, scale_h) * 0.95;
+        this.pageScale = Math.min(scale_w, scale_h) * 0.98;
         document.body.style.webkitTransform = 'scale(' + this.pageScale + ')';
         document.body.style.msTransform = 'scale(' + this.pageScale + ')';
         document.body.style.transform = 'scale(' + this.pageScale + ')';
