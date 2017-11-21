@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const extractSass = new ExtractTextPlugin({
     filename: "[name].[contenthash].css"
@@ -80,9 +79,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
-    extractSass,
-    new ImageminPlugin({
-      disable: process.env.NODE_ENV !== 'production', // Disable during development
-    })
+    extractSass
   ]
 };
