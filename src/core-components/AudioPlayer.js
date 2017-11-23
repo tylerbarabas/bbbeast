@@ -1,7 +1,7 @@
 import 'latest-createjs';
 const createjs = window.createjs;
 
-export default class Stage {
+export default class AudioPlayer {
 
     constructor(){
         createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashAudioPlugin]);	
