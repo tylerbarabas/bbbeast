@@ -3885,6 +3885,10 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
+latest-createjs@^1.0.24:
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/latest-createjs/-/latest-createjs-1.0.24.tgz#c4c837f5f4688978e89c2b17ad0e2b5dc5111b34"
+
 lazy-cache@^0.2.3:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-0.2.7.tgz#7feddf2dcb6edb77d11ef1d117ab5ffdf0ab1b65"
