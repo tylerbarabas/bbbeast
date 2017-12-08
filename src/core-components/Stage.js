@@ -1,9 +1,10 @@
 import bg from 'img/bg.jpg';
+import DomElement from './DomElement';
 
-export default class Stage {
+export default class Stage extends DomElement {
 
     constructor(){
-        this.dom = document.createElement('DIV');
+        super();
         this.dom.id = 'content-stage';
         this.dom.setAttribute('style',`
             position: absolute;
@@ -62,30 +63,6 @@ export default class Stage {
 
         this.dom.style.top = move_y + 'px';
         this.dom.style.left = move_x + 'px';
-    }
-
-    setTransition (transition,setChildren,element) {
-        setChildren = setChildren || false;
-        element = element || this.dom;
-
-        element.style.transition = transition;
-        element.style.WebkitTransition = transition;
-        element.style.MozTransition = transition;
-
-        if (!setChildren) return;
-
-        let children = element.childNodes;
-        for (let i=0;i<children.length;i++) {
-            children[i].style.transition = transition;
-            children[i].style.WebkitTransition = transition;
-            children[i].style.MozTransition = transition;
-
-            if (children[i].childNodes.length > 0) this.setTransition(transition,true,children[i]);
-        }
-    }
-
-    style (attr,val) {
-        this.dom.style[attr] = val;
     }
 
     showOverlay() {

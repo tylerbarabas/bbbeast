@@ -1,14 +1,15 @@
 import 'latest-createjs';
+import DomElement from './DomElement';
 const createjs = window.createjs;
 
-export default class AudioPlayer {
+export default class AudioPlayer extends DomElement {
 
     constructor(){
+        super();
         createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashAudioPlugin]);	
         createjs.Sound.alternateExtensions = ['mp3'];
         this.loaded = false;
         this.playing = false;
-        this.dom = document.createElement('DIV');
         this.currentAudio = {
             path: null,
             title: null
@@ -52,23 +53,5 @@ export default class AudioPlayer {
 
     setPosition(pos){
         this.cjs.setPosition(pos);
-    }
-
-    addEvent(evtName, func){
-        this.dom.addEventListener(evtName,func);
-    }
-
-    removeEvent(evtName, func){
-        this.dom.removeEventListener(evtName,func);
-    }
-
-    dispatchEvent(evtName, params){
-        var evt = document.createEvent('Event');
-        evt.initEvent(evtName,true,true);
-        evt.params = params;
-        this.dom.dispatchEvent(evt);
-    }
-
-    init(){
     }
 }
