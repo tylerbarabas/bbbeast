@@ -42,7 +42,6 @@ test('DomElement should handle events', ()=>{
     de1.addEvent('evt-test', func);
     de2.dispatchEvent('evt-test',{ expectedValue: 1 });
 
-
     de1.removeEvent('evt-test', func);
     de2.dispatchEvent('evt-test', func);
 
@@ -50,5 +49,4 @@ test('DomElement should handle events', ()=>{
         expect(evttriggered).toBe(2);
         expect(foobar).toBe(2);
     },1);
-
 }); 
