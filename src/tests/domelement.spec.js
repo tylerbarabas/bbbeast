@@ -35,9 +35,8 @@ test('DomElement should handle events', ()=>{
 
     let func = (e)=>{
         evttriggered++;
-
         expect(evttriggered).toBe(e.expectedValue);
-    }
+    };
 
     de1.addEvent('evt-test', func);
     de2.dispatchEvent('evt-test',{ expectedValue: 1 });
