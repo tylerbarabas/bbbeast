@@ -41,4 +41,8 @@ export default class DomElement {
     style (attr,val) {
         this.dom.style[attr] = val;
     }
+
+    appendTo( elem = document.body ) {
+        elem.appendChild( this.dom );
+    }
 }

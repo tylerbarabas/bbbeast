@@ -1,57 +1,63 @@
-import 'latest-createjs';
 import DomElement from './DomElement';
-const createjs = window.createjs;
+
+window.AudioContext = window.AudioContext||window.webkitAudioContext;
 
 export default class AudioPlayer extends DomElement {
 
     constructor(){
+        if (typeof window.AP !== 'undefined') {
+            throw 'Cannot instantiate another Audio Player.';
+        }
         super();
-        createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashAudioPlugin]);	
-        createjs.Sound.alternateExtensions = ['mp3'];
         this.loaded = false;
         this.playing = false;
         this.currentAudio = {
             path: null,
             title: null
         };
+        this.dom = null;
+        window.AP = this;
     }
 
-    loadFile(audioPath, title){
-        createjs.Sound.registerSound(audioPath, title);
-        createjs.Sound.on('fileload', this.onFileLoad, this);
+    init() {
+        this.dom = document.createElement('AUDIO');
+        this.dom.id = 'audio-player';
+        document.body.appendChild(this.dom);
+    }
+
+    loadFile(audioPath){
         this.currentAudio.path = audioPath;
-        this.currentAudio.title = title;
+        this.dom.addEventListener( 'loadeddata', this.onFileLoad.bind(this) );
+        this.dom.src = audioPath;
     }
 
     onFileLoad(){
         this.loaded = true;
-        this.dispatchEvent('songLoaded',{path: this.currentAudio.path, title: this.currentAudio.title});
+        this.dispatchEvent( 'song-loaded' );
     }
 
-    play(title){
+    play(){
         if (!this.loaded || this.playing) return;
-        if (!this.cjs) {
-            this.cjs = createjs.Sound.play(title);
-        } else {
-            this.cjs.play(title);
-        }
         this.playing = true;
+        this.dom.play();
     }
 
     pause(){
-        this.cjs.setPaused(true);
         this.playing = false;
+        this.dom.pause();
     }
 
-    stop(title){
-        createjs.Sound.stop(title);
+    stop(){
+        this.playing = false;
+        this.pause();
+        this.setPosition(0);
     }
 
     getPosition(){
-        return this.cjs.getPosition();
+        return this.dom.currentTime;
     }
 
     setPosition(pos){
-        this.cjs.setPosition(pos);
+        this.dom.currentTime = pos;
     }
 }
