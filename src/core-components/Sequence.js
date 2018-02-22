@@ -9,29 +9,29 @@ export default class Sequence {
 
         this.loaded = false;
         this.playing = false;
-        this.rootPath = 'song_sequences/';
 
         this.time = {};
         this.songEvents = [];
         this.instructions = [];
 
-        this.dom = document.createElement('DIV');
-        this.cjs = false; 
+        this.ap = new AudioPlayer();
+        this.ap.init();
     }
 
     init() {
-        AudioPlayer.addEvent('song-loaded',this.onFileLoad.bind(this));
-        AudioPlayer.loadFile(this.audioPath);
+        this.ap.addEvent('song-loaded',this.onFileLoad.bind(this));
+        this.ap.loadFile(this.audioPath);
     }
 
     onFileLoad(e) {
         this.loaded = true;
         this.calculateSubdivisions();
         this.registerSongEvents();
+        this.play();
     }
 
     calculateSubdivisions() {
-        let bpms = (60/this.bpm)*1000;
+        let bpms = (60/this.bpm);
         this.time.quarterNote = this.time.beat = bpms;
         this.time.halfNote = this.time.quarterNote*2;
         this.time.wholeNote = this.time.halfNote*2;
@@ -43,19 +43,19 @@ export default class Sequence {
         this.time.bar = parseInt(this.timeSignature.split('/')[0]) * this.time.quarterNote;
     }
 
-    getTime() {
+    getTime(bar, beat) {
         return parseInt(((bar-1) * this.time.bar) + ((beat-1) * this.time.beat));
     }
 
     play() {
         this.playing = true;
         this.ticker = setInterval(this.tick.bind(this),1);
-        AudioPlayer.play(this.title);
+        this.ap.play(this.title);
     }
 
     pause() {
         this.playing = false;
-        AudioPlayer.pause();
+        this.ap.pause();
         this.stopTicker();
     }
 
@@ -66,7 +66,7 @@ export default class Sequence {
         }
 
         this.position = this.getPosition();
-	
+
         if (this.songEvents[0].pos <= this.position) {
             this.songEvents[0].func();
             this.songEvents.shift();
@@ -178,28 +178,14 @@ export default class Sequence {
 
     stop() {
         this.playing = false;
-        AudioPlayer.stop();
+        this.ap.stop();
     }
 
     getPosition() {
-        return AudioPlayer.getPosition();
+        return this.ap.getPosition();
     }
 
     setPosition(pos) {
-        AudioPlayer.setPosition(pos);
-    }
-
-    addEvent(evtName,func) {
-        this.dom.addEventListener(evtName,func);
-    }
-
-    removeEvent(evtName,func) {
-        this.dom.removeEventListener(evtName,func);
-    }
-
-    dispatchEvent(evtName) {
-        let evt = document.createEvent('Event');
-        evt.initEvent(evtName,true,true);
-        this.dom.dispatchEvent(evt);
+        this.ap.setPosition(pos);
     }
 }
