@@ -27,7 +27,6 @@ export default class Sequence {
         this.loaded = true;
         this.calculateSubdivisions();
         this.registerSongEvents();
-        this.play();
     }
 
     calculateSubdivisions() {

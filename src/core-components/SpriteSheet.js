@@ -23,5 +23,19 @@ export default class SpriteSheet extends DomElement {
 
         createjs.Ticker.timingMode = createjs.Ticker.RAF;
         createjs.Ticker.addEventListener('tick', this.stage);
+
+        this.appendTo();
+    }
+
+    changeSprite(seq){
+        if (typeof seq != 'string') return;
+        if (this.currentAnim == seq) return;
+
+        if (this.stage !== null) this.stage.removeChild(this.animation);
+
+        this.currentAnim = seq;
+        this.animation = new createjs.Sprite(this.spritesheet, this.currentAnim);
+
+        this.stage.addChild(this.animation);
     }
 }
