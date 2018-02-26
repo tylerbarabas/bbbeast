@@ -6,13 +6,14 @@ export default class Sequence {
         this.audioPath = null;
         this.bpm = null;
         this.timeSignature = null;
+        this.json = null;
+        this.instructions = null;
 
         this.loaded = false;
         this.playing = false;
 
         this.time = {};
         this.songEvents = [];
-        this.instructions = [];
 
         this.ap = new AudioPlayer();
         this.ap.init();
@@ -27,8 +28,11 @@ export default class Sequence {
 
     onFileLoad(e) {
         this.loaded = true;
-        this.calculateSubdivisions();
-        this.registerSongEvents();
+        
+        if (this.bpm !== null && this.timeSignature !== null &&this.instructions !== null) { 
+            this.calculateSubdivisions();
+            this.registerSongEvents();
+        }
     }
 
     calculateSubdivisions() {

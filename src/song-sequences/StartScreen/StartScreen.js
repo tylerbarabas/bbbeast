@@ -9,8 +9,6 @@ export default class StartScreen extends Sequence {
         this.stage = new Stage();
         this.stage.setBackdrop(BG);
         this.audioPath = SND;
-        this.timeSignature = '4/4';
-        this.bpm = 100;
 
         super.init();
     }
