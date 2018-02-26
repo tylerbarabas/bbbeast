@@ -1,5 +1,5 @@
 import Stage from 'core-components/Stage';
-import SprightlyGentleman from 'song-sequences/SprightlyGentleman';
+import SprightlyGentleman from 'song-sequences/SprightlyGentleman/SprightlyGentleman';
 import bbStump from 'visual-components/bbStump/bbStump';
 import './index.css';
 
