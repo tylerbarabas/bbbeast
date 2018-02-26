@@ -16,6 +16,8 @@ export default class Sequence {
 
         this.ap = new AudioPlayer();
         this.ap.init();
+
+        this.init();
     }
 
     init() {

@@ -1,15 +1,14 @@
-import bg from 'img/bg.jpg';
 import DomElement from './DomElement';
 
 export default class Stage extends DomElement {
 
     constructor(){
         super();
+        if (typeof window.stage !== 'undefined') return window.stage;
         this.dom.id = 'content-stage';
         this.dom.setAttribute('style',`
             position: absolute;
             width: 1200px;
-            background: url(${bg});
             background-size: 100% 100%;
             background-repeat: no-repeat; 
             height: 650px;
@@ -31,9 +30,14 @@ export default class Stage extends DomElement {
         `);
 
         this.pageScale = 1;
+        this.init();
     }
 
     init(){
+        if ( typeof window.stage !== 'undefined' ) {
+            throw 'Cannot init Stage, instance already exists.';
+        }
+
         document.body.appendChild(this.dom);
         this.dom.appendChild(this.overlay);
 
@@ -42,6 +46,7 @@ export default class Stage extends DomElement {
             this.dom.style.visibility = 'visible';
             window.addEventListener('resize',this.resize.bind(this));
         }.bind(this),25);
+        window.stage = this;
     }
 
     resize(){
@@ -63,6 +68,10 @@ export default class Stage extends DomElement {
 
         this.dom.style.top = move_y + 'px';
         this.dom.style.left = move_x + 'px';
+    }
+
+    setBackdrop(img){
+        this.style('background-image',`url(${img})`)
     }
 
     showOverlay() {
