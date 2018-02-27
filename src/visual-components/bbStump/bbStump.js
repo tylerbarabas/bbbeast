@@ -7,6 +7,7 @@ export default class bbStump extends SpriteSheet {
         super();
         this.json = JSON;
         this.json.images = [IMG];
+        this.init();
     }
 
     init() {
@@ -18,5 +19,7 @@ export default class bbStump extends SpriteSheet {
         this.style('z-index','1');
 
         super.init();
+
+        this.appendTo();
     };
 }
