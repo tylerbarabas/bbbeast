@@ -2,6 +2,7 @@ import Sequence from '../../core-components/Sequence';
 import Stage from '../../core-components/Stage';
 import Audio from '../../snd/test.mp3';
 import LoverImage from '../../visual-components/LoverImage/LoverImage';
+import BlundrLogo from '../../visual-components/BlundrLogo/BlundrLogo';
 
 export default class Serious extends Sequence {
      init(){
@@ -10,8 +11,7 @@ export default class Serious extends Sequence {
         super.init();
 
         this.stage = new Stage();
-
+        this.blundrLogo = new BlundrLogo();
         this.loverImage = new LoverImage();
-        this.loverImage.appendTo( this.stage );
     } 
 }

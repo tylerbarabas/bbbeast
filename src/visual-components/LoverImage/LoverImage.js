@@ -21,5 +21,6 @@ export default class LoverImage extends DomElement{
         this.displayImage.dom.src = IMG;
         this.displayImage.style('height', `${window.innerHeight * 0.3}px`);
         this.displayImage.appendTo( this );
+        this.appendTo();
     }
 }
