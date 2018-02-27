@@ -15,7 +15,7 @@ export default class LoverImage extends DomElement{
             width: 'fit-content',
             height: 'fit-content',
             backgroundColor: 'rgba(255,255,255,0.5)',
-            borderRadius: '30px'
+            borderRadius: '10px'
         });   
         this.displayImage = new DomElement('IMG');
         this.displayImage.dom.src = IMG;
