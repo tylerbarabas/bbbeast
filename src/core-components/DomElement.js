@@ -1,6 +1,6 @@
 export default class DomElement {
-    constructor(){
-        this.dom = document.createElement('DIV');
+    constructor(tag = 'DIV'){
+        this.dom = document.createElement(tag);
     }
 
     addEvent(evtName, func){
@@ -39,10 +39,20 @@ export default class DomElement {
     }
 
     style (attr,val) {
-        this.dom.style[attr] = val;
+        if ( typeof attr === 'string' ) {
+            this.dom.style[attr] = val;
+        } else {
+            for (let i in attr) {
+                this.dom.style[i] = attr[i];
+            }
+        }
     }
 
     appendTo( elem = document.body ) {
-        elem.appendChild( this.dom );
+        if (typeof elem === 'object') {
+            elem.dom.appendChild( this.dom );
+        } else {
+            elem.appendChild( this.dom );
+        }
     }
 }

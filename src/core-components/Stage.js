@@ -1,7 +1,6 @@
 import DomElement from './DomElement';
 
 export default class Stage extends DomElement {
-
     constructor(){
         super();
         if (typeof window.stage !== 'undefined') return window.stage;
@@ -72,6 +71,10 @@ export default class Stage extends DomElement {
 
     setBackdrop(img){
         this.style('background-image',`url(${img})`)
+    }
+
+    setMasterFont(){
+        document.body.style.fontFace = 'Catholic School Girl';
     }
 
     showOverlay() {
