@@ -14,8 +14,8 @@ export default class Serious extends Sequence {
 
         this.stage = new Stage();
         this.blundrLogo = new BlundrLogo();
-        this.loverImage = new LoverImage();
         this.yeh = new Yeh();
         this.nah = new Nah();
+        this.loverImage = new LoverImage();
     } 
 }

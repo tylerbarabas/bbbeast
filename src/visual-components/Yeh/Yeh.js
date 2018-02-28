@@ -18,7 +18,8 @@ export default class Yeh extends DomElement{
             textAlign: 'center',
             fontSize: '40px',
             lineHeight: '150px',
-            borderRadius: '10px'
+            borderRadius: '10px',
+            cursor: 'pointer'
         });
         this.dom.innerText = 'Yeh';
         this.appendTo();

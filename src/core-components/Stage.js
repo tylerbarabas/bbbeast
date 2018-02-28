@@ -14,20 +14,6 @@ export default class Stage extends DomElement {
             overflow: hidden;
             visibility: hidden;
         `);
-
-        this.overlay = document.createElement('DIV');
-        this.overlay.id = 'overlay';
-        this.overlay.setAttribute('style', `
-            height: 100%;
-            width: 100%;
-            background-color: #000000;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        `);
-
         this.pageScale = 1;
         this.init();
     }
@@ -38,7 +24,6 @@ export default class Stage extends DomElement {
         }
 
         document.body.appendChild(this.dom);
-        this.dom.appendChild(this.overlay);
 
         setTimeout(function(){
             this.resize();
@@ -75,13 +60,5 @@ export default class Stage extends DomElement {
 
     setMasterFont(){
         document.body.style.fontFace = 'Catholic School Girl';
-    }
-
-    showOverlay() {
-        this.overlay.style.opacity = 1;
-    }
-
-    hideOverlay() {
-        this.overlay.style.opacity = 0;
     }
 }
