@@ -793,9 +793,9 @@ batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
 
-"bbcore@https://github.com/tylerbarabas/bbcore.git":
+"bbcore@https://github.com/tylerbarabas/bbcore.git#master":
   version "0.0.0"
-  resolved "https://github.com/tylerbarabas/bbcore.git#b38cfc272ac83171da08b5c0f62bfc6dbc8acec3"
+  resolved "https://github.com/tylerbarabas/bbcore.git#64c920c10304b5bf86a27db153589b86e18ffcb9"
 
 bcrypt-pbkdf@^1.0.0:
   version "1.0.1"

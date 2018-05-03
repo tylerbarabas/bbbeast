@@ -1,5 +1,5 @@
 import SpriteSheet from 'bbcore/sprite-sheet';
-import JSON from './bbbeast-on-stump.json';
+import JSON from './instructions.json';
 import IMG from './img/bbstump2.png';
 
 export default class bbbeastOnStump extends SpriteSheet {

@@ -44,7 +44,7 @@
     "webpack-merge": "4.1.0"
   },
   "dependencies": {
-    "bbcore": "https://github.com/tylerbarabas/bbcore.git",
+    "bbcore": "https://github.com/tylerbarabas/bbcore.git#master",
     "file-loader": "^1.1.5",
     "imagemin-webpack-plugin": "^1.5.2",
     "latest-createjs": "^1.0.24"
