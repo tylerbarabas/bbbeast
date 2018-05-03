@@ -1,6 +1,6 @@
 import GlobalStyle from 'bbcore/GlobalStyle';
 import Stage from 'bbcore/Stage';
-import StartScreen from 'song-sequences/StartScreen/StartScreen';
+import StartScreen from 'song-sequences/start-screen/controller';
 import FONT from './fonts/catholic_school_girl/catholic_school_girl.ttf';
 import './index.css';
 

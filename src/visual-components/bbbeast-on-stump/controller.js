@@ -1,8 +1,8 @@
-import SpriteSheet from 'bbcore/SpriteSheet';
+import SpriteSheet from 'bbcore/sprite-sheet';
 import JSON from './bbbeast-on-stump.json';
 import IMG from './img/bbstump2.png';
 
-export default class bbbeast-on-stump extends SpriteSheet {
+export default class bbbeastOnStump extends SpriteSheet {
     constructor(){
         super();
         this.json = JSON;
