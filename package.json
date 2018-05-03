@@ -1,7 +1,7 @@
 {
-  "name": "webpack-es6-boilerplate",
+  "name": "bbbeast",
   "version": "1.0.1",
-  "author": "Joseph Luccisano <joseph.luccisano@gmail.com> (https://jluccisano.github.io)",
+  "author": "Tyler Barabas <tylerbarabas@gmail.com>",
   "description": "A delightfully Webpack ES6 Boilerplate",
   "license": "MIT",
   "keywords": [
@@ -13,14 +13,6 @@
     "jest",
     "sass"
   ],
-  "bugs": {
-    "url": "https://github.com/jluccisano/webpack-es6-boilerplate/issues",
-    "email": "joseph.luccisano@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jluccisano/webpack-es6-boilerplate.git"
-  },
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config conf/webpack.dev.js",
