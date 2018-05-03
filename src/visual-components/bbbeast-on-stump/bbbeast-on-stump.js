@@ -1,8 +1,8 @@
-import SpriteSheet from '../../core-components/SpriteSheet';
-import JSON from './json/bbStump.json';
+import SpriteSheet from 'bbcore/SpriteSheet';
+import JSON from './bbbeast-on-stump.json';
 import IMG from './img/bbstump2.png';
 
-export default class bbStump extends SpriteSheet {
+export default class bbbeast-on-stump extends SpriteSheet {
     constructor(){
         super();
         this.json = JSON;
@@ -11,7 +11,7 @@ export default class bbStump extends SpriteSheet {
     }
 
     init() {
-        this.dom.id = 'bbstump';
+        this.dom.id = 'bbbeast-on-stump';
         this.style('position','absolute');
         this.style('left','210px');
         this.style('top','288px');
