@@ -1,8 +1,8 @@
-import Sequence from 'bbcore/Sequence';
-import Stage from 'bbcore/Stage';
+import Sequence from 'bbcore/sequence';
+import Stage from 'bbcore/stage';
 import BG from '../../img/bg.jpg';
 import SND from '../../snd/test.mp3';
-import DomElement from 'bbcore/DomElement';
+import DomElement from 'bbcore/dom-element';
 
 export default class StartScreen extends Sequence {
     init(){
