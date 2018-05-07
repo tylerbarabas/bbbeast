@@ -1,5 +1,5 @@
-import Sequence from '../../core-components/Sequence';
-import Instructions from './SprightlyGentleman.json';
+import Sequence from 'bbcore/sequence';
+import Instructions from './instructions.json';
 import Audio from '../../snd/test.mp3';
 
 export default class SprightlyGentleman extends Sequence {
