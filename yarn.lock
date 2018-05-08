@@ -875,7 +875,7 @@ batch@0.6.1:
 
 "bbcore@https://github.com/tylerbarabas/bbcore.git#master":
   version "0.0.0"
-  resolved "https://github.com/tylerbarabas/bbcore.git#edc48f1d4b716c7907a9fbed31e4fa18a7367d05"
+  resolved "https://github.com/tylerbarabas/bbcore.git#7ff52010bdadaad6959e86ed86b8043155a3467a"
 
 bcrypt-pbkdf@^1.0.0:
   version "1.0.1"
