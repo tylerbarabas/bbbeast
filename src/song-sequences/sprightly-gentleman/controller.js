@@ -4,6 +4,7 @@ import Audio from '../../snd/test.mp3';
 
 import bbbeastAtTable from '../../visual-components/bbbeast-at-table/controller';
 import kidsFacingForward from '../../visual-components/kids-facing-forward/controller';
+import teacherPointingStick from '../../visual-components/teacher-pointing-stick/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -26,8 +27,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.bat = new bbbeastAtTable();
 //        this.bat.changeSprite('default');
 
-        this.kff = new kidsFacingForward();
-        this.kff.changeSprite('default');
+//        this.kff = new kidsFacingForward();
+//        this.kff.changeSprite('default');
+
+        this.tps = new teacherPointingStick();
+        this.tps.changeSprite('default');
     }
 
     showDot(){
