@@ -1,0 +1,19 @@
+{
+"framerate": 5,
+"frames": [
+    [1, 1, 1160, 469, 0, 0, 0],
+    [1, 472, 1160, 469, 0, 0, 0],
+    [1, 943, 1160, 469, 0, 0, 0],
+    [1, 1414, 1160, 469, 0, 0, 0]
+],
+
+"animations": {
+    "default": { "frames": [0, 1, 2, 3] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:b38af09f6f1d9cf4d815f5e29be36086:19d1260dfe2d117fae79aa74972bf3c1:07aa5c8ed5ac18fa79bbcbfbd0bc7257$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

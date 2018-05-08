@@ -16,4 +16,5 @@ new GlobalStyle(`
 `, true);
 
 //new StartScreen();
+new Stage();
 new SprightlyGentleman();
