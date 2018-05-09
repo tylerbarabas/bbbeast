@@ -15,6 +15,7 @@ import classroomTeacher1 from '../../visual-components/classroom-teacher1/contro
 import classroomTeacher2 from '../../visual-components/classroom-teacher2/controller';
 import classroomTeacher3 from '../../visual-components/classroom-teacher3/controller';
 import classroomTeacher4 from '../../visual-components/classroom-teacher4/controller';
+import backdropTreehouseInside from '../../visual-components/backdrop-treehouse-inside/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -72,6 +73,9 @@ export default class SprightlyGentleman extends Sequence {
 
 //        this.ct4 = new classroomTeacher4();
 //        this.ct4.init();
+
+        this.bti = new backdropTreehouseInside();
+        this.bti.init();
     }
 
     showDot(){
