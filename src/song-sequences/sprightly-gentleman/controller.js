@@ -11,6 +11,10 @@ import teacherThrowsBookKids from '../../visual-components/teacher-throws-book-k
 import classroomDeskBbbeast from '../../visual-components/classroom-desk-bbbeast/controller';
 import classroomDeskKid1 from '../../visual-components/classroom-desk-kid1/controller';
 import classroomDeskKid2 from '../../visual-components/classroom-desk-kid2/controller';
+import classroomTeacher1 from '../../visual-components/classroom-teacher1/controller';
+import classroomTeacher2 from '../../visual-components/classroom-teacher2/controller';
+import classroomTeacher3 from '../../visual-components/classroom-teacher3/controller';
+import classroomTeacher4 from '../../visual-components/classroom-teacher4/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -56,6 +60,18 @@ export default class SprightlyGentleman extends Sequence {
 
 //        this.cdk2 = new classroomDeskKid2();
 //        this.cdk2.init();
+
+//        this.ct1 = new classroomTeacher1();
+//        this.ct1.init();
+
+//        this.ct2 = new classroomTeacher2();
+//        this.ct2.init();
+
+//        this.ct3 = new classroomTeacher3();
+//        this.ct3.init();
+
+//        this.ct4 = new classroomTeacher4();
+//        this.ct4.init();
     }
 
     showDot(){
