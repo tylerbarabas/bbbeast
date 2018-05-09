@@ -8,6 +8,7 @@ import teacherPointingStick from '../../visual-components/teacher-pointing-stick
 import backdropChalkboard from '../../visual-components/backdrop-chalkboard/controller';
 import teacherThrowsBookBbbeast from '../../visual-components/teacher-throws-book-bbbeast/controller';
 import teacherThrowsBookKids from '../../visual-components/teacher-throws-book-kids/controller';
+import classroomDeskBbbeast from '../../visual-components/classroom-desk-bbbeast/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -42,8 +43,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.ttbb = new teacherThrowsBookBbbeast();
 //        this.ttbb.changeSprite('default');
 
-        this.ttbk = new teacherThrowsBookKids();
-        this.ttbk.changeSprite('default');
+//        this.ttbk = new teacherThrowsBookKids();
+//        this.ttbk.changeSprite('default');
+
+        this.cdb = new classroomDeskBbbeast();
+        this.cdb.init();
     }
 
     showDot(){
