@@ -17,6 +17,7 @@ import classroomTeacher3 from '../../visual-components/classroom-teacher3/contro
 import classroomTeacher4 from '../../visual-components/classroom-teacher4/controller';
 import backdropTreehouseInside from '../../visual-components/backdrop-treehouse-inside/controller';
 import littleBeastAtTable from '../../visual-components/little-beast-at-table/controller';
+import doctorVisit from '../../visual-components/doctor-visit/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -26,6 +27,7 @@ export default class SprightlyGentleman extends Sequence {
         this.timeSignature = '4/4';
         this.instructions = Instructions;
         super.init();
+        this.ap.dom.volume = 0;
 
         this.bat = null;
     }
@@ -78,8 +80,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.bti = new backdropTreehouseInside();
 //        this.bti.init();
 
-        this.lbat = new littleBeastAtTable();
-        this.lbat.changeSprite('default'); 
+//        this.lbat = new littleBeastAtTable();
+//        this.lbat.changeSprite('default'); 
+
+        this.dv = new doctorVisit();
+        this.dv.changeSprite('default');
     }
 
     showDot(){
