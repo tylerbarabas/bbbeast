@@ -24,6 +24,7 @@ import mouth from '../../visual-components/mouth/controller';
 import mamaPutsBbbeastToBed from '../../visual-components/mama-puts-bbbeast-to-bed/controller';
 import bbstumpMeditate from '../../visual-components/bbstump-meditate/controller';
 import banjo from '../../visual-components/banjo/controller';
+import walkCycle from '../../visual-components/walk-cycle/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -107,8 +108,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.bbsm = new bbstumpMeditate();
 //        this.bbsm.changeSprite('default');
 
-        this.b = new banjo();
-        this.b.init();
+//        this.b = new banjo();
+//        this.b.init();
+
+        this.wc = new walkCycle();
+        this.wc.changeSprite('default');
     }
 
     showDot(){
