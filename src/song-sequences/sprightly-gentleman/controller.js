@@ -23,6 +23,7 @@ import bbbeastInChurch from '../../visual-components/bbbeast-in-church/controlle
 import mouth from '../../visual-components/mouth/controller';
 import mamaPutsBbbeastToBed from '../../visual-components/mama-puts-bbbeast-to-bed/controller';
 import bbstumpMeditate from '../../visual-components/bbstump-meditate/controller';
+import banjo from '../../visual-components/banjo/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -103,8 +104,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.mpbtb = new mamaPutsBbbeastToBed();
 //        this.mpbtb.changeSprite('default');
 
-        this.bbsm = new bbstumpMeditate();
-        this.bbsm.changeSprite('default');
+//        this.bbsm = new bbstumpMeditate();
+//        this.bbsm.changeSprite('default');
+
+        this.b = new banjo();
+        this.b.init();
     }
 
     showDot(){
