@@ -20,6 +20,7 @@ import littleBeastAtTable from '../../visual-components/little-beast-at-table/co
 import doctorVisit from '../../visual-components/doctor-visit/controller';
 import treadmillSolo from '../../visual-components/treadmill-solo/controller';
 import bbbeastInChurch from '../../visual-components/bbbeast-in-church/controller';
+import mouth from '../../visual-components/mouth/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -91,8 +92,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.ts = new treadmillSolo();
 //        this.ts.changeSprite('default');
 
-        this.bit = new bbbeastInChurch();
-        this.bit.changeSprite('default');
+//        this.bit = new bbbeastInChurch();
+//        this.bit.changeSprite('default');
+
+        this.m = new mouth();
+        this.m.changeSprite('default');
     }
 
     showDot(){
