@@ -18,6 +18,7 @@ import classroomTeacher4 from '../../visual-components/classroom-teacher4/contro
 import backdropTreehouseInside from '../../visual-components/backdrop-treehouse-inside/controller';
 import littleBeastAtTable from '../../visual-components/little-beast-at-table/controller';
 import doctorVisit from '../../visual-components/doctor-visit/controller';
+import treadmillSolo from '../../visual-components/treadmill-solo/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -83,8 +84,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.lbat = new littleBeastAtTable();
 //        this.lbat.changeSprite('default'); 
 
-        this.dv = new doctorVisit();
-        this.dv.changeSprite('default');
+//        this.dv = new doctorVisit();
+//        this.dv.changeSprite('default');
+
+        this.ts = new treadmillSolo();
+        this.ts.changeSprite('default');
     }
 
     showDot(){
