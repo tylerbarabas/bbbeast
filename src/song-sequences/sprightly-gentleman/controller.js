@@ -26,6 +26,7 @@ import bbstumpMeditate from '../../visual-components/bbstump-meditate/controller
 import banjo from '../../visual-components/banjo/controller';
 import walkCycle from '../../visual-components/walk-cycle/controller';
 import bbstumpGuitar from '../../visual-components/bbstump-guitar/controller';
+import guitar from '../../visual-components/guitar/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -115,8 +116,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.wc = new walkCycle();
 //        this.wc.changeSprite('default');
 
-        this.bbsg = new bbstumpGuitar();
-        this.bbsg.changeSprite('default');
+//        this.bbsg = new bbstumpGuitar();
+//        this.bbsg.changeSprite('default');
+
+        this.g = new guitar();
+        this.g.init();
     }
 
     showDot(){
