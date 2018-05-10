@@ -21,6 +21,7 @@ import doctorVisit from '../../visual-components/doctor-visit/controller';
 import treadmillSolo from '../../visual-components/treadmill-solo/controller';
 import bbbeastInChurch from '../../visual-components/bbbeast-in-church/controller';
 import mouth from '../../visual-components/mouth/controller';
+import mamaPutsBbbeastToBed from '../../visual-components/mama-puts-bbbeast-to-bed/controller';
 
 export default class SprightlyGentleman extends Sequence {
     init(){
@@ -95,8 +96,11 @@ export default class SprightlyGentleman extends Sequence {
 //        this.bit = new bbbeastInChurch();
 //        this.bit.changeSprite('default');
 
-        this.m = new mouth();
-        this.m.changeSprite('default');
+//        this.m = new mouth();
+//        this.m.changeSprite('default');
+
+        this.mpbtb = new mamaPutsBbbeastToBed();
+        this.mpbtb.changeSprite('default');
     }
 
     showDot(){
