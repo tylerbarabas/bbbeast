@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "bbcore": "https://github.com/tylerbarabas/bbcore.git#master",
+    "clmtrackr": "^1.1.2",
     "file-loader": "^1.1.5",
     "imagemin-webpack-plugin": "^1.5.2",
     "latest-createjs": "^1.0.24"
