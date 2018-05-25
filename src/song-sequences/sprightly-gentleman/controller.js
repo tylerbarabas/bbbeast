@@ -56,8 +56,24 @@ export default class SprightlyGentleman extends Sequence {
         this.bat.changeSprite('default');
     }
 
+    shot02(){
+        this.lbat = new littleBeastAtTable();
+        this.lbat.changeSprite('default');
+        this.lbat.style('opacity', 0);
+        this.lbat.setTransition('3s opacity');
+
+        this.bat.setTransition('2s opacity');
+        this.bat.addEvent('transitionend',()=>{
+            this.bat.style('display', 'none');
+        });
+        setTimeout(()=>{
+            this.bat.style('opacity', 0);
+            this.lbat.style('opacity', 1);
+        },0);
+    }
+
     debug(){
-//        this.bat = new bbbeastAtTable();
+//        this.bat = new bbbeastAtTable(');
 //        this.bat.changeSprite('default');
 
 //        this.kff = new kidsFacingForward();

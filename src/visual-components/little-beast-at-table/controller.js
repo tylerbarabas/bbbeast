@@ -14,5 +14,10 @@ export default class littleBeastAtTable extends SpriteSheet {
     init(){
         super.init();
         this.dom.id = 'little-beast-at-table';
+        this.style({
+            position: 'absolute',
+            bottom: 0,
+            left: '80px'
+        });
    } 
 }
