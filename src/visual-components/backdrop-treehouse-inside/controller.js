@@ -12,6 +12,7 @@ export default class backdropTreehouseInside extends DomElement {
         this.dom.id = 'backdrop-treehouse-inside';
         this.dom.setAttribute('src', IMG);
         this.style('width', '100%');
+        this.style('height', '100%');
         this.appendTo();
     }
 }

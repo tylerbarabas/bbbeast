@@ -47,6 +47,16 @@ export default class SprightlyGentleman extends Sequence {
     } 
 
     shot01(){
+        document.getElementById('overlay').style.display = 'none';
+
+        this.bti = new backdropTreehouseInside();
+        this.bti.init();       
+
+        this.bat = new bbbeastAtTable();
+        this.bat.changeSprite('default');
+    }
+
+    debug(){
 //        this.bat = new bbbeastAtTable();
 //        this.bat.changeSprite('default');
 
@@ -119,15 +129,7 @@ export default class SprightlyGentleman extends Sequence {
 //        this.bbsg = new bbstumpGuitar();
 //        this.bbsg.changeSprite('default');
 
-        this.g = new guitar();
-        this.g.init();
+//        this.g = new guitar();
+//        this.g.init();
     }
-
-    showDot(){
-        console.log('showDot');
-    }
-
-    hideDot(){
-        console.log('hideDot');
-    } 
 }
