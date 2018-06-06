@@ -9,7 +9,7 @@ export default class StartScreen extends Sequence {
     init(){
         this.stage = new Stage();
         this.stage.setBackdrop(BG);
-//        this.stage.setTransition('filter 500ms');
+        this.hueRotate(150);
         this.audioPath = SND;
 
         this.bpm = 60;
@@ -22,7 +22,7 @@ export default class StartScreen extends Sequence {
 
     onFileLoad(){
         super.onFileLoad();
- //       this.play();
+        this.play();
     }
 
     createTitleMessage(){
@@ -45,12 +45,18 @@ export default class StartScreen extends Sequence {
         this.stage.style('filter', 'hue-rotate('+deg+'deg)');
     }
 
-    oddBeats(){
-        let rand = Math.floor(Math.random() * 201);
-        this.hueRotate(100+rand);
+    huepos1(){
+        this.stage.setTransition('filter 0s');
+        this.hueRotate(220);
     }
 
-    evenBeats(){
-        this.hueRotate(100);
+    huepos2(){
+        this.stage.setTransition('filter 1s');
+        this.hueRotate(150);
+    }
+
+    huepos3(){
+        this.stage.setTransition('filter 0s');
+        this.hueRotate(105);
     }
 }
