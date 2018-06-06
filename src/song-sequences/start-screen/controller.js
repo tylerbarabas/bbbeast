@@ -8,6 +8,7 @@ import Instructions from './instructions.json';
 export default class StartScreen extends Sequence {
     init(){
         this.stage = new Stage();
+        this.stage.showOverlay();
         this.stage.setBackdrop(BG);
         this.hueRotate(150);
         this.audioPath = SND;
@@ -39,6 +40,11 @@ export default class StartScreen extends Sequence {
             borderRadius: '30px'
         });
         this.titleMessage.appendTo( this.stage );
+    }
+
+    hideOverlay(){
+        this.stage.setTransition('3s opacity', false, this.stage.overlay);
+        this.stage.hideOverlay();
     }
 
     hueRotate(deg){
