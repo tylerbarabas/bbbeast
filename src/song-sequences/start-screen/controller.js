@@ -3,25 +3,30 @@ import Stage from 'bbcore/stage';
 import BG from '../../img/bg.jpg';
 import SND from '../../snd/intro.mp3';
 import DomElement from 'bbcore/dom-element';
+import Instructions from './instructions.json';
 
 export default class StartScreen extends Sequence {
     init(){
-        this.title = 'The Legend of Bbbeast, Part one';
         this.stage = new Stage();
         this.stage.setBackdrop(BG);
+//        this.stage.setTransition('filter 500ms');
         this.audioPath = SND;
 
-        super.init();
+        this.bpm = 60;
+        this.timeSignature = '4/4';
+        this.instructions = Instructions;
+        this.ap.dom.volume = 0.5;
 
-        this.createTitleMessage();
+        super.init();
     }
 
     onFileLoad(){
         super.onFileLoad();
-        this.play();
+ //       this.play();
     }
 
     createTitleMessage(){
+        this.title = 'The Legend of Bbbeast';
         this.titleMessage = new DomElement();
         this.titleMessage.dom.innerText = this.title;
         this.titleMessage.style({
@@ -34,5 +39,18 @@ export default class StartScreen extends Sequence {
             borderRadius: '30px'
         });
         this.titleMessage.appendTo( this.stage );
+    }
+
+    hueRotate(deg){
+        this.stage.style('filter', 'hue-rotate('+deg+'deg)');
+    }
+
+    oddBeats(){
+        let rand = Math.floor(Math.random() * 201);
+        this.hueRotate(100+rand);
+    }
+
+    evenBeats(){
+        this.hueRotate(100);
     }
 }
