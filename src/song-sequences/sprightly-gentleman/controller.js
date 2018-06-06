@@ -1,6 +1,6 @@
 import Sequence from 'bbcore/sequence';
 import Instructions from './instructions.json';
-import Audio from '../../snd/test.mp3';
+import Audio from '../../snd/test.wav';
 
 import bbbeastAtTable from '../../visual-components/bbbeast-at-table/controller';
 import kidsFacingForward from '../../visual-components/kids-facing-forward/controller';

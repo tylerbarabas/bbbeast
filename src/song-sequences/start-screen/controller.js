@@ -1,7 +1,7 @@
 import Sequence from 'bbcore/sequence';
 import Stage from 'bbcore/stage';
 import BG from '../../img/bg.jpg';
-import SND from '../../snd/test.mp3';
+import SND from '../../snd/intro.mp3';
 import DomElement from 'bbcore/dom-element';
 
 export default class StartScreen extends Sequence {
@@ -18,7 +18,7 @@ export default class StartScreen extends Sequence {
 
     onFileLoad(){
         super.onFileLoad();
-//        this.play();
+        this.play();
     }
 
     createTitleMessage(){
