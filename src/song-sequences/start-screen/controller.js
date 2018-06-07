@@ -78,10 +78,6 @@ export default class StartScreen extends Sequence {
         this.hueRotate(105);
     }
 
-    speedUpMeditateTransition(){
-        this.bbsg.setTransition('1s bottom');
-    }
-
     hoverUp(){
         this.bbsg.style('bottom', '148px');
     }
