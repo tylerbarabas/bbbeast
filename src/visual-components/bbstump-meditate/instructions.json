@@ -116,6 +116,12 @@
                 9,
                 10
             ]
+        },
+        "meditate": {
+            "frames": [
+                10
+            ],
+            "next": false
         }
     },
     "texturepacker": [

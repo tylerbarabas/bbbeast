@@ -186,6 +186,10 @@
                 16,
                 17
             ]
+        },
+        "meditate": {
+            "frames": [17],
+            "next": false
         }
     },
     "texturepacker": [

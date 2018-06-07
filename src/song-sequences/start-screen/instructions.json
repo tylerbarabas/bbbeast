@@ -3,5 +3,8 @@
   "1":["huepos3",{"bar":1,"beat":1},["h"],100,-0.1],
   "2":["huepos2",{"bar":1,"beat":1},["h"],100],
   "3":["huepos1",{"bar":1,"beat":2},["h"],100,-0.1],
-  "4":["huepos2",{"bar":1,"beat":2},["h"],100]
+  "4":["huepos2",{"bar":1,"beat":2},["h"],100],
+  "5":["hoverUp",{"bar":1,"beat":3}],
+  "6":["hoverUp",{"bar":2,"beat":1},["q"],100,-0.5],
+  "7":["hoverDown",{"bar":2,"beat":1},["q"],100]
 }

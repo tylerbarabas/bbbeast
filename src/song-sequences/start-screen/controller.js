@@ -4,6 +4,8 @@ import BG from '../../img/bg.jpg';
 import SND from '../../snd/intro.mp3';
 import DomElement from 'bbcore/dom-element';
 import Instructions from './instructions.json';
+import bbstumpGuitar from '../../visual-components/bbstump-guitar/controller';
+import walkCycle from '../../visual-components/walk-cycle/controller';
 
 export default class StartScreen extends Sequence {
     init(){
@@ -43,6 +45,16 @@ export default class StartScreen extends Sequence {
     }
 
     hideOverlay(){
+        this.bbsg = new bbstumpGuitar();
+        this.bbsg.changeSprite('meditate');
+        this.bbsg.style({
+            height: '300px',
+            position: 'absolute',
+            left: '100px',
+            bottom: '0'
+        });
+        this.bbsg.setTransition('1s bottom');
+
         this.stage.setTransition('3s opacity', false, this.stage.overlay);
         this.stage.hideOverlay();
     }
@@ -64,5 +76,17 @@ export default class StartScreen extends Sequence {
     huepos3(){
         this.stage.setTransition('filter 0s');
         this.hueRotate(105);
+    }
+
+    speedUpMeditateTransition(){
+        this.bbsg.setTransition('1s bottom');
+    }
+
+    hoverUp(){
+        this.bbsg.style('bottom', '148px');
+    }
+
+    hoverDown(){
+        this.bbsg.style('bottom', '140px');
     }
 }
