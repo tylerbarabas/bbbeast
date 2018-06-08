@@ -5,7 +5,7 @@ import SND from '../../snd/intro.mp3';
 import DomElement from 'bbcore/dom-element';
 import Instructions from './instructions.json';
 import bbstumpGuitar from '../../visual-components/bbstump-guitar/controller';
-import walkCycle from '../../visual-components/walk-cycle/controller';
+//import walkCycle from '../../visual-components/walk-cycle/controller';
 
 export default class StartScreen extends Sequence {
     init(){
@@ -14,6 +14,7 @@ export default class StartScreen extends Sequence {
         this.stage.setBackdrop(BG);
         this.hueRotate(150);
         this.audioPath = SND;
+        this.firstHoverDown = true;
 
         this.bpm = 60;
         this.timeSignature = '4/4';
@@ -44,17 +45,19 @@ export default class StartScreen extends Sequence {
         this.titleMessage.appendTo( this.stage );
     }
 
-    hideOverlay(){
+    playGuitar(){
         this.bbsg = new bbstumpGuitar();
-        this.bbsg.changeSprite('meditate');
+        this.bbsg.changeSprite('playGuitar');
         this.bbsg.style({
             height: '300px',
             position: 'absolute',
             left: '100px',
             bottom: '0'
         });
-        this.bbsg.setTransition('1s bottom');
+        this.bbsg.setTransition('2s bottom');
+    }
 
+    hideOverlay(){
         this.stage.setTransition('3s opacity', false, this.stage.overlay);
         this.stage.hideOverlay();
     }
@@ -78,11 +81,19 @@ export default class StartScreen extends Sequence {
         this.hueRotate(105);
     }
 
+    setGuitarDown(){
+        this.bbsg.changeSprite('setGuitarDown');
+    }
+
     hoverUp(){
         this.bbsg.style('bottom', '148px');
     }
 
     hoverDown(){
+        if (this.firstHoverDown) {
+            this.bbsg.setTransition('1s bottom');
+            this.firstHoverDown = false;
+        }
         this.bbsg.style('bottom', '140px');
     }
 }
