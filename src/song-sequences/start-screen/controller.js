@@ -21,12 +21,28 @@ export default class StartScreen extends Sequence {
         this.instructions = Instructions;
         this.ap.dom.volume = 0.5;
 
+        this.onOverlayClick = this.onOverlayClick.bind(this);
+
         super.init();
     }
 
     onFileLoad(){
         super.onFileLoad();
+        this.waitForClick();
+    }
+
+    waitForClick(){ 
+        this.stage.overlay.style.color = "white";
+        this.stage.overlay.style.textAlign = "center";
+        this.stage.overlay.style.paddingTop = '300px';
+        this.stage.overlay.style.fontSize = '30px';
+        this.stage.overlay.innerText = "Touch to begin";
+        this.stage.addEvent('click', this.onOverlayClick);
+    }
+
+    onOverlayClick(){
         this.play();
+        this.stage.removeEvent('click',this.onOverlayClick);
     }
 
     createTitleMessage(){
