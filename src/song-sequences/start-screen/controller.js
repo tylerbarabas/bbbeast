@@ -48,7 +48,7 @@ export default class StartScreen extends Sequence {
     }
 
     createTitleMessage(){
-        this.title = 'The Legend of Bbbeast';
+        this.title = 'bbbbeast';
         this.titleMessage = new DomElement();
         this.titleMessage.dom.innerText = this.title;
         this.titleMessage.style({
@@ -60,39 +60,23 @@ export default class StartScreen extends Sequence {
             backgroundColor: 'rgba(255,255,255,0.5)',
             borderRadius: '30px'
         });
-        this.titleMessage.appendTo( this.stage );
+        this.titleMessage.appendTo();
     }
 
     playGuitar(){
         this.stump = new Stump();
         this.stump.init();
 
-        this.bbContainer = new DomElement();
-        this.bbContainer.dom.id = 'bb-container';
-        this.bbContainer.style({
+        this.bbsg = new bbstumpGuitar();
+        this.bbsg.changeSprite('playGuitar');
+        this.bbsg.style({
+            height: '300px',
             position: 'absolute',
             left: '240px',
             bottom: '0'
         });
-        this.bbContainer.appendTo();
-
-        this.bbsg = new bbstumpGuitar();
-        this.bbsg.changeSprite('playGuitar');
-        this.bbsg.style({
-            height: '300px'
-        });
         this.bbsg.setTransition('2s bottom');
-        this.bbsg.appendTo(this.bbContainer);
-
-        this.mouth = new Mouth();
-        this.mouth.style({
-            height: '20px',
-            position: 'relative',
-            bottom: '166px',
-            right: '160px'
-        });
-        this.mouth.appendTo(this.bbContainer);
-        this.mouth.changeSprite('default');
+        this.bbsg.appendTo();
     }
 
     hideOverlay(){
@@ -124,14 +108,14 @@ export default class StartScreen extends Sequence {
     }
 
     hoverUp(){
-        this.bbContainer.style('bottom', '148px');
+        this.bbsg.style('bottom', '148px');
     }
 
     hoverDown(){
         if (this.firstHoverDown) {
-            this.bbContainer.setTransition('1s bottom');
+            this.bbsg.setTransition('1s bottom');
             this.firstHoverDown = false;
         }
-        this.bbContainer.style('bottom', '140px');
+        this.bbsg.style('bottom', '140px');
     }
 }
