@@ -12,7 +12,7 @@ export default class mouth extends SpriteSheet {
     }
 
     init(){
-        super.init();
+        super.init( false );
         this.dom.id = 'mouth';
    } 
 }

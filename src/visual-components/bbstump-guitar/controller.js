@@ -12,7 +12,7 @@ export default class bbstumpGuitar extends SpriteSheet {
     }
 
     init(){
-        super.init();
+        super.init( false );
         this.dom.id = 'bbstump-guitar';
         this.style('height','100%');
    } 

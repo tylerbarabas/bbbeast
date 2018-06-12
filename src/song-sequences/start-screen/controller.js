@@ -6,6 +6,8 @@ import DomElement from 'bbcore/dom-element';
 import Instructions from './instructions.json';
 import bbstumpGuitar from '../../visual-components/bbstump-guitar/controller';
 import Stump from '../../visual-components/stump/controller';
+import Mouth from '../../visual-components/mouth/controller';
+
 
 export default class StartScreen extends Sequence {
     init(){
@@ -65,15 +67,32 @@ export default class StartScreen extends Sequence {
         this.stump = new Stump();
         this.stump.init();
 
-        this.bbsg = new bbstumpGuitar();
-        this.bbsg.changeSprite('playGuitar');
-        this.bbsg.style({
-            height: '300px',
+        this.bbContainer = new DomElement();
+        this.bbContainer.dom.id = 'bb-container';
+        this.bbContainer.style({
             position: 'absolute',
             left: '240px',
             bottom: '0'
         });
+        this.bbContainer.appendTo();
+
+        this.bbsg = new bbstumpGuitar();
+        this.bbsg.changeSprite('playGuitar');
+        this.bbsg.style({
+            height: '300px'
+        });
         this.bbsg.setTransition('2s bottom');
+        this.bbsg.appendTo(this.bbContainer);
+
+        this.mouth = new Mouth();
+        this.mouth.style({
+            height: '20px',
+            position: 'relative',
+            bottom: '166px',
+            right: '160px'
+        });
+        this.mouth.appendTo(this.bbContainer);
+        this.mouth.changeSprite('default');
     }
 
     hideOverlay(){
@@ -105,14 +124,14 @@ export default class StartScreen extends Sequence {
     }
 
     hoverUp(){
-        this.bbsg.style('bottom', '148px');
+        this.bbContainer.style('bottom', '148px');
     }
 
     hoverDown(){
         if (this.firstHoverDown) {
-            this.bbsg.setTransition('1s bottom');
+            this.bbContainer.setTransition('1s bottom');
             this.firstHoverDown = false;
         }
-        this.bbsg.style('bottom', '140px');
+        this.bbContainer.style('bottom', '140px');
     }
 }
