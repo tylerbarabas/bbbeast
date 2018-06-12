@@ -5,7 +5,7 @@ import SND from '../../snd/intro.mp3';
 import DomElement from 'bbcore/dom-element';
 import Instructions from './instructions.json';
 import bbstumpGuitar from '../../visual-components/bbstump-guitar/controller';
-//import walkCycle from '../../visual-components/walk-cycle/controller';
+import Stump from '../../visual-components/stump/controller';
 
 export default class StartScreen extends Sequence {
     init(){
@@ -62,12 +62,15 @@ export default class StartScreen extends Sequence {
     }
 
     playGuitar(){
+        this.stump = new Stump();
+        this.stump.init();
+
         this.bbsg = new bbstumpGuitar();
         this.bbsg.changeSprite('playGuitar');
         this.bbsg.style({
             height: '300px',
             position: 'absolute',
-            left: '100px',
+            left: '240px',
             bottom: '0'
         });
         this.bbsg.setTransition('2s bottom');
