@@ -6,7 +6,7 @@ import DomElement from 'bbcore/dom-element';
 import Instructions from './instructions.json';
 import bbstumpGuitar from '../../visual-components/bbstump-guitar/controller';
 import Stump from '../../visual-components/stump/controller';
-import Mouth from '../../visual-components/mouth/controller';
+import Guitar from '../../visual-components/guitar/controller';
 
 
 export default class StartScreen extends Sequence {
@@ -105,6 +105,11 @@ export default class StartScreen extends Sequence {
 
     setGuitarDown(){
         this.bbsg.changeSprite('setGuitarDown');
+
+        setTimeout(()=>{
+            this.guitar = new Guitar();
+            this.guitar.init();
+        },400)
     }
 
     hoverUp(){

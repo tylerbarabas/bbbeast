@@ -11,7 +11,12 @@ export default class guitar extends DomElement {
         this.dom = document.createElement('IMG');
         this.dom.id = 'guitar';
         this.dom.setAttribute('src', IMG);
-        this.style('width', '100%');
+        this.style({
+            height: '400px',
+            position: 'absolute',
+            bottom: '-40px',
+            left: '145px'
+        });
         this.appendTo();
     }
 }
