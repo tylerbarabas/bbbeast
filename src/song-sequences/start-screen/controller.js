@@ -4,7 +4,7 @@ import BG from '../../img/bg.jpg';
 import SND from '../../snd/intro.mp3';
 import DomElement from 'bbcore/dom-element';
 import Instructions from './instructions.json';
-import bbstumpGuitar from '../../visual-components/bbstump-guitar/controller';
+import bbstumpGuitar from '../../visual-components/bbstump-guitar-mouth/controller';
 import Stump from '../../visual-components/stump/controller';
 import Guitar from '../../visual-components/guitar/controller';
 
