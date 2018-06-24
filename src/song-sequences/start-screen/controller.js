@@ -7,13 +7,15 @@ import Instructions from './instructions.json';
 import bbstumpGuitar from '../../visual-components/bbstump-guitar-mouth/controller';
 import Stump from '../../visual-components/stump/controller';
 import Guitar from '../../visual-components/guitar/controller';
-
+import BGSway from '../../visual-components/sway-landing/controller';
 
 export default class StartScreen extends Sequence {
     init(){
         this.stage = new Stage();
         this.stage.showOverlay();
-        this.stage.setBackdrop(BG);
+        //this.stage.setBackdrop(BG);
+        this.bgSway = new BGSway();
+        this.bgSway.changeSprite('default');
         this.hueRotate(150);
         this.audioPath = SND;
         this.firstHoverDown = true;
