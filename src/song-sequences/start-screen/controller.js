@@ -16,9 +16,12 @@ export default class StartScreen extends Sequence {
         //this.stage.setBackdrop(BG);
         this.bgSway = new BGSway();
         this.bgSway.changeSprite('default');
-        this.hueRotate(150);
+        this.hueRotate(0,1000);
+        
+        this.stage.setTransition('filter 1s');
         this.audioPath = SND;
         this.firstHoverDown = true;
+        this.wobbleI = 3;
 
         this.bpm = 60;
         this.timeSignature = '4/4';
@@ -86,23 +89,25 @@ export default class StartScreen extends Sequence {
         this.stage.hideOverlay();
     }
 
-    hueRotate(deg){
+    hueRotate(deg,ms = 0){ 
+        this.stage.setTransition('filter '+ms+'ms');
         this.stage.style('filter', 'hue-rotate('+deg+'deg)');
     }
 
+    startHue(){
+        this.hueRotate(150,4000);
+    }
+
     huepos1(){
-        this.stage.setTransition('filter 0s');
-        this.hueRotate(220);
+        this.hueRotate(220,0);
     }
 
     huepos2(){
-        this.stage.setTransition('filter 1s');
-        this.hueRotate(150);
+        this.hueRotate(150,1000);
     }
 
     huepos3(){
-        this.stage.setTransition('filter 0s');
-        this.hueRotate(105);
+        this.hueRotate(105,0);
     }
 
     setGuitarDown(){
@@ -124,5 +129,15 @@ export default class StartScreen extends Sequence {
             this.firstHoverDown = false;
         }
         this.bbsg.style('bottom', '140px');
+    }
+
+    wobbleWobble(){
+        if (this.wobbleI < 100) {
+            setTimeout(()=>{
+                this.wobbleI += 10;
+                this.bgSway.animation._animation.speed = this.wobbleI;
+                this.wobbleWobble();
+            },500);
+        }
     }
 }
